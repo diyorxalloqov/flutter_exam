@@ -1,5 +1,7 @@
+import 'package:fast_cached_network_image/fast_cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_exam_/provider/PhotoProvider.dart';
+import 'package:flutter_exam_/ui/PopularIfoPage.dart';
 import 'package:provider/provider.dart';
 
 class Popular extends StatefulWidget {
@@ -35,28 +37,42 @@ class _PopularState extends State<Popular> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        width: double.infinity,
-                        height: 200,
-                        decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: NetworkImage(
-                                    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"),
-                                fit: BoxFit.fill),
-                            color: Colors.blue,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(15))),
-                        child: const Padding(
-                          padding: EdgeInsets.all(25.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Text(
-                                "sdfsdasdvasdvasv",
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => PopularInfoPage(
+                                      info: photoProvider.data[index])));
+                        },
+                        child: Container(
+                          width: double.infinity,
+                          height: 200,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: FastCachedImageProvider(
+                                      photoProvider.data[index].url.toString()),
+                                  fit: BoxFit.fill),
+                              color: Colors.blue,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(15))),
+                          child: Padding(
+                            padding: EdgeInsets.all(25.0),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Expanded(
+                                  child: Text(
+                                    photoProvider.data[index].title.toString(),
+                                    overflow: TextOverflow.clip,
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -103,9 +119,12 @@ class _PopularState extends State<Popular> {
                                   SizedBox(
                                     width: mQ.width * 0.05,
                                   ),
-                                  Text("data"),
+                                  Text("ms Dhoni"),
                                 ],
                               ),
+                            ),
+                            SizedBox(
+                              height: 15,
                             ),
                             Container(
                               width: mQ.width * 0.6,
@@ -133,7 +152,64 @@ class _PopularState extends State<Popular> {
                                   SizedBox(
                                     width: mQ.width * 0.05,
                                   ),
-                                  Text("data"),
+                                  Text("Virat kahli"),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Container(
+                              width: mQ.width * 0.6,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                borderRadius: const BorderRadius.horizontal(
+                                    left: Radius.circular(20),
+                                    right: Radius.circular(20)),
+                                color: Colors.grey.shade300,
+                              ),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: mQ.width * 0.03,
+                                  ),
+                                  InkWell(
+                                      onTap: () {
+                                        setState(() {
+                                          isTap = !isTap;
+                                        });
+                                      },
+                                      child: isTap
+                                          ? Icon(Icons.check_circle_outline)
+                                          : Icon(Icons.circle_outlined)),
+                                  SizedBox(
+                                    width: mQ.width * 0.05,
+                                  ),
+                                  Text("Rohit Shama"),
+                                ],
+                              ),
+                            ),
+                            SizedBox(
+                              height: 15,
+                            ),
+                            Container(
+                              width: mQ.width * 0.27,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                borderRadius: const BorderRadius.horizontal(
+                                    left: Radius.circular(20),
+                                    right: Radius.circular(20)),
+                                color: Colors.blue,
+                              ),
+                              child: Row(
+                                children: [
+                                  SizedBox(
+                                    width: mQ.width * 0.05,
+                                  ),
+                                  Text(
+                                    "See Results",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
                                 ],
                               ),
                             ),

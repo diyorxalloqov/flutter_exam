@@ -1,14 +1,19 @@
+import 'package:fast_cached_network_image/fast_cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_exam_/db/PhotoDBService.dart';
 import 'package:flutter_exam_/provider/PhotoProvider.dart';
 import 'package:flutter_exam_/ui/HomePage.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   PhotoDBService.registeradapter();
+  String storageLocation = (await getApplicationDocumentsDirectory()).path;
+  await FastCachedImageConfig.init(
+      subDir: storageLocation, clearCacheAfter: const Duration(days: 15));
   runApp(const MyApp());
 }
 
