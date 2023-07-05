@@ -55,9 +55,9 @@ class _PopularState extends State<Popular> {
                                   fit: BoxFit.fill),
                               color: Colors.blue,
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(15))),
+                                  const BorderRadius.all(Radius.circular(15))),
                           child: Padding(
-                            padding: EdgeInsets.all(25.0),
+                            padding: const EdgeInsets.all(25.0),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.end,
@@ -66,7 +66,7 @@ class _PopularState extends State<Popular> {
                                   child: Text(
                                     photoProvider.data[index].title.toString(),
                                     overflow: TextOverflow.clip,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                       color: Colors.white,
                                     ),
                                   ),
@@ -84,7 +84,7 @@ class _PopularState extends State<Popular> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(
+                            const Text(
                               "adcssdlvkmaslkvmklasnmvlkasfvdcsd",
                               style: TextStyle(
                                   color: Colors.black,
@@ -114,16 +114,17 @@ class _PopularState extends State<Popular> {
                                         });
                                       },
                                       child: isTap
-                                          ? Icon(Icons.check_circle_outline)
-                                          : Icon(Icons.circle_outlined)),
+                                          ? const Icon(
+                                              Icons.check_circle_outline)
+                                          : const Icon(Icons.circle_outlined)),
                                   SizedBox(
                                     width: mQ.width * 0.05,
                                   ),
-                                  Text("ms Dhoni"),
+                                  const Text("ms Dhoni"),
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15,
                             ),
                             Container(
@@ -147,16 +148,17 @@ class _PopularState extends State<Popular> {
                                         });
                                       },
                                       child: isTap
-                                          ? Icon(Icons.check_circle_outline)
-                                          : Icon(Icons.circle_outlined)),
+                                          ? const Icon(
+                                              Icons.check_circle_outline)
+                                          : const Icon(Icons.circle_outlined)),
                                   SizedBox(
                                     width: mQ.width * 0.05,
                                   ),
-                                  Text("Virat kahli"),
+                                  const Text("Virat kahli"),
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15,
                             ),
                             Container(
@@ -180,23 +182,24 @@ class _PopularState extends State<Popular> {
                                         });
                                       },
                                       child: isTap
-                                          ? Icon(Icons.check_circle_outline)
-                                          : Icon(Icons.circle_outlined)),
+                                          ? const Icon(
+                                              Icons.check_circle_outline)
+                                          : const Icon(Icons.circle_outlined)),
                                   SizedBox(
                                     width: mQ.width * 0.05,
                                   ),
-                                  Text("Rohit Shama"),
+                                  const Text("Rohit Shama"),
                                 ],
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 15,
                             ),
                             Container(
                               width: mQ.width * 0.27,
                               height: 30,
-                              decoration: BoxDecoration(
-                                borderRadius: const BorderRadius.horizontal(
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.horizontal(
                                     left: Radius.circular(20),
                                     right: Radius.circular(20)),
                                 color: Colors.blue,
@@ -206,7 +209,7 @@ class _PopularState extends State<Popular> {
                                   SizedBox(
                                     width: mQ.width * 0.05,
                                   ),
-                                  Text(
+                                  const Text(
                                     "See Results",
                                     style: TextStyle(color: Colors.white),
                                   ),

@@ -46,13 +46,20 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
-                child: Row(
+                width: 70,
+                height: 5,
+                decoration: const BoxDecoration(
+                    border: Border.symmetric(
+                        horizontal: BorderSide(color: Colors.grey),
+                        vertical: BorderSide(color: Colors.grey)),
+                    borderRadius: BorderRadius.horizontal(
+                        left: Radius.circular(30), right: Radius.circular(30))),
+                child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Icon(
                       Icons.circle_notifications_outlined,
                       color: Colors.amber,
-
                     ),
                     SizedBox(
                       width: 5,
@@ -63,16 +70,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                   ],
-                ),
-                width: 70,
-                height: 5,
-                decoration: const BoxDecoration(
-                    border: Border.symmetric(
-                        horizontal: BorderSide(color: Colors.grey),
-                        vertical: BorderSide(color: Colors.grey)),
-                    borderRadius: BorderRadius.horizontal(
-                        left: Radius.circular(30),
-                        right: Radius.circular(30)))),
+                )),
           ),
           IconButton(
             onPressed: () {},

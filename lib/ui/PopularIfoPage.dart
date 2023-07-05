@@ -32,6 +32,8 @@ class PopularInfoPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(15.0),
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     info.title.toString(),
@@ -42,9 +44,9 @@ class PopularInfoPage extends StatelessWidget {
                     height: mQ.height * 0.02,
                   ),
                   ListTile(
-                      leading: const CircleAvatar(
-                        backgroundImage: FastCachedImageProvider(
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVpcCcQNUGyTpt1jjsWPZVrdEvPHO3kr7Tdg&usqp=CAU"),
+                      leading: CircleAvatar(
+                        backgroundImage:
+                            FastCachedImageProvider(info.url.toString()),
                         radius: 30,
                       ),
                       title: const Text("By andy Corbley"),
@@ -78,8 +80,11 @@ class PopularInfoPage extends StatelessWidget {
                       Text("Share"),
                     ],
                   ),
-                  Text("sadfsdgSFGSGssd"),
-                  
+                  SizedBox(
+                    height: mQ.height * 0.05,
+                  ),
+                  const Text(
+                      "sadfsdgSFGdzsfjgksdrfhaENFBgjrdkfsidaoishfuijoaiDHoAPKDJfzioakijfugSGssd"),
                 ],
               ),
             ),
